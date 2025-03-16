@@ -4,8 +4,14 @@ Detta är en Python-implementering av Model Context Protocol (MCP), som är ett 
 
 Den kontaktar Riksbankens API och frågar efter växlingskursen för en viss valuta till svenska kronor. Den accepterar ISO 4217 koden för valutor dvs NOK (norska kronor), EUR (Euro), GBP (brittiska pund) etc.
 
+Testad i Claude Desktop i MacOS. Kräver Pyhon och uv.
+
+Installation:
+```bash
+uv run mcp install server.py
+```
+
 ## Vidare läsning:
-ISO 4217
 https://en.wikipedia.org/wiki/ISO_4217
 
 https://github.com/modelcontextprotocol/python-sdk
