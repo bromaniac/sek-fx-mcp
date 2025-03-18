@@ -1,3 +1,4 @@
+import os
 import httpx
 from mcp.server.fastmcp import FastMCP
 
@@ -16,8 +17,12 @@ async def fetch_fx(currency: str) -> str:
 
     try:
         async with httpx.AsyncClient() as client:
+            headers = {}
+            if key := os.environ.get("RIKSBANKEN_API_KEY"):
+                headers["Ocp-Apim-Subscription-Key"] = key
             response = await client.get(
-                f"https://api.riksbank.se/swea/v1/Observations/Latest/sek{currency}pmi"
+                f"https://api.riksbank.se/swea/v1/Observations/Latest/sek{currency}pmi",
+                headers=headers,
             )
             if response.status_code != 200:
                 raise RuntimeError(

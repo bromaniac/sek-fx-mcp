@@ -342,16 +342,20 @@ name = "sek-fx-mcp"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
-    { name = "black" },
     { name = "mcp", extra = ["cli"] },
+]
+
+[package.optional-dependencies]
+dev = [
+    { name = "black" },
     { name = "ruff" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "black", specifier = ">=25.1.0" },
+    { name = "black", marker = "extra == 'dev'", specifier = ">=25.1.0" },
     { name = "mcp", extras = ["cli"], specifier = ">=1.4.1" },
-    { name = "ruff", specifier = ">=0.11.0" },
+    { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.11.0" },
 ]
 
 [[package]]

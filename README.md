@@ -4,7 +4,7 @@ Detta är en Python-implementering av Model Context Protocol (MCP), som är ett 
 
 Den kontaktar Riksbankens API och frågar efter växlingskursen för en viss valuta till svenska kronor. Den accepterar ISO 4217-koden för valutor dvs NOK (norska kronor), EUR (Euro), GBP (brittiska pund) etc.
 
-Riksbanken har en begränsning på antalet anrop från samma ip-adress inom ett visst tidsspann (5 anrop per minut och maximalt 1000 anrop per dygn). Krävs mer behövs en API-nyckel. Den här MCP:n stödjer inte API-nyckel just nu men vet vet, jag kanske implementerar det i framtiden.
+Riksbanken har en begränsning på antalet anrop från samma ip-adress inom ett visst tidsspann (5 anrop per minut och maximalt 1000 anrop per dygn). Krävs fler anrop än detta behövs en API-nyckel. Se länk till Riksbanken längre ner för information hur du skaffar en nyckel. Sätt nyckeln i miljövariabeln RIKSBANKEN_API_KEY.
 
 Testad i Claude Desktop i MacOS. Kräver Python och uv.
 
